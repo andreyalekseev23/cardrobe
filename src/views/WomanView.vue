@@ -1,0 +1,85 @@
+<template>
+  <div class="woman">
+    <div class="container">
+      <div class="woman__inner">
+        <SettingsComponent />
+        <div class="woman__content">
+          <div class="woman__find">
+            <h1 class="woman__title">Woman</h1>
+            <FindComponent />
+          </div>
+          <div class="woman__items">
+            <ul class="woman__list">
+              <li class="woman__item">
+                <ProductItem />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import FindComponent from "@/components/FindComponent";
+import SettingsComponent from "@/components/SettingsComponent";
+import ProductItem from "@/components/ProductItem";
+
+export default {
+  name: "WomanView",
+  components: {
+    FindComponent,
+    SettingsComponent,
+    ProductItem
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.woman {
+  width: 100%;
+  margin-top: 50px;
+
+  &__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 72%;
+    grid-column-gap: 3%;
+    align-items: start;
+  }
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+  }
+  &__find {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background: var(--color_gold);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color_green);
+  }
+  &__items {
+    width: 100%;
+  }
+  &__list {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+}
+</style>
